@@ -82,6 +82,8 @@ document.addEventListener("DOMContentLoaded", function(){
         }
         else{
             if(selectedButton==ques_arr[q[key]] && z == true){
+                console.log(selectedButton);
+                console.log(ques_arr[q[key]]);
                 prompt.innerHTML = "Correct Answer";
                 prompt.style.color = 'green';
                 z = false;
