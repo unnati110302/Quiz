@@ -32,7 +32,10 @@ document.addEventListener("DOMContentLoaded", function(){
         'Which of the following is not a part of the female reproductive system in human beings?' : option4.value,
     }
 
-    const ans = ['androgen', 'inhibine', 'estrogen', 'dopamine','smoking','obesity', 'low blood pressure', 'both options 1 and 2','physical health','cognitive health', 'social health', 'All of he above', 'Schizophrenia', 'dysthymia', 'anorexia', 'binge eating', 'men', 'women', 'both', 'none', '206', '89', '193', '308', 'eyes', 'hair', 'fingers', 'lips', 'blood pressure', 'heart rate', 'pulse rate','body fat', 'Ovary', 'Uterus', 'Fallopian tube', 'vas deferens'];
+    const ans = ['androgen', 'inhibine', 'estrogen', 'dopamine','smoking','obesity', 'low blood pressure', 'both options 1 and 2','physical health','cognitive health', 'social health', 'All of the above', 'Schizophrenia', 'dysthymia', 'anorexia', 'binge eating', 'men', 'women', 'both', 'none', '206', '89', '193', '308', 'eyes', 'hair', 'fingers', 'lips', 'blood pressure', 'heart rate', 'pulse rate','body fat', 'Ovary', 'Uterus', 'Fallopian tube', 'vas deferens'];
+
+    const anskey = ['heart', 'androgen', 'both options 1 and 2', 'All of the above', 'anorexia', 'both', '206',  'hair', 'blood pressure', 'vas deferens'];
+    var m = 0;
 
     const q = Object.keys(ques_arr);
     var i = 1;
@@ -41,6 +44,7 @@ document.addEventListener("DOMContentLoaded", function(){
 
     next.addEventListener("click", function(){
         z = true;
+        m++;
         
         var radioButtons = document.querySelectorAll('input[name="options"]');
         radioButtons.forEach(function(radioButton) {
@@ -85,7 +89,7 @@ document.addEventListener("DOMContentLoaded", function(){
                 marks++;
             }
             else if(z==true){
-                prompt.innerHTML = "Wrong answer";
+                prompt.innerHTML = "Wrong answer, correct answer is " + anskey[m];
                 prompt.style.color = 'red';
                 z = false;
                 key++;
